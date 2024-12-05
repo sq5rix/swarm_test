@@ -18,11 +18,15 @@ def test_code():
     return agent_c
 
 
+def execute_code(code=None, test_code=None):
+    return agent_d
+
+
 agent_a = Agent(
     name="ProjectManager",
     model=model_list[QWEN7],
     instructions="You are project manager.",
-    functions=[order_code, test_code],
+    functions=[order_code, test_code, execute_code],
 )
 
 agent_b = Agent(
@@ -35,6 +39,12 @@ agent_c = Agent(
     name="Tester",
     model=model_list[QWEN7],
     instructions=TESTER_PROMPT,
+)
+
+agent_d = Agent(
+    name="Executor",
+    model=model_list[QWEN7],
+    instructions=SYSTEM_EXECUTOR_PROMPT,
 )
 
 response = client.run(

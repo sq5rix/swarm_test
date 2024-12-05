@@ -50,3 +50,19 @@ Your role is to:
 
 Output format should be pure Python test code using pytest or unittest framework.
 Include assertions and test cases that thoroughly validate the implementation."""
+
+
+SYSTEM_EXECUTOR_PROMPT = """You are a system executor agent responsible for:
+1. Saving program code to appropriate .py files
+2. Saving test code to appropriate test files
+3. Running the tests using pytest
+4. Capturing and returning test results
+
+When you receive code:
+- Save main program code to 'program.py'
+- Save test code to 'test_program.py'
+- Execute 'pytest test_program.py'
+- Return the test execution results
+
+Use Python's built-in file operations and subprocess to handle these tasks.
+Always maintain proper file structure and ensure clean test execution."""
