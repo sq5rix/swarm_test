@@ -9,4 +9,5 @@ model_list = [
     "mistral:latest",
     "nomic-embed-text:latest",
     "llama3.1:latest",
+    "gpt-4o",
 ]
