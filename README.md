@@ -9,4 +9,4 @@ python -m venv venv
 
 # install swarm
 
-pip install git+ssh://git@github.com/openai/swarm.git
+pip install git+ssh://git@github.com/sq5rix/swarm.git
